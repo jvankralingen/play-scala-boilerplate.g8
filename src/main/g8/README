@@ -1,4 +1,33 @@
-This is your new Play 2.1 application
-=====================================
+In order to run this application you need to take the following steps:
 
-This file will be packaged with your application, when using `play dist`.
+First, append `conf/overrides.conf` with:
+
+``` ini
+# Jira information, needed to report the errors to Jira
+jira.username="jira-username"
+jira.password="jira-password"
+jira.endpoint="https://rhinofly.atlassian.net/rest/api/2/"
+
+# Information needed by the exception processor
+jira.exceptionProcessor.enabled=false
+jira.exceptionProcessor.projectKey=PA
+jira.exceptionProcessor.componentName=cso-document-storage-api
+# Hash is the default
+#jira.exceptionProcessor.hashCustomFieldName=Hash
+# 1 is the default (Bug)
+#jira.exceptionProcessor.issueType=1
+
+# Used when the connection to Jira failed, note that the error is also logged
+jira.exceptionProcessor.mail.from.name=Play application
+jira.exceptionProcessor.mail.from.address="noreply@rhinofly.net"
+jira.exceptionProcessor.mail.to.name=Play
+jira.exceptionProcessor.mail.to.address="play+error@rhinofly.nl"
+
+# Used by the SES plugin
+mail.smtp.failTo="failto+test@rhinofly.net"
+
+mail.smtp.host=email-smtp.us-east-1.amazonaws.com
+mail.smtp.port=465
+mail.smtp.username="ses-username"
+mail.smtp.password="ses-password"
+```

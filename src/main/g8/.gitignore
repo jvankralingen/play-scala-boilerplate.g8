@@ -13,3 +13,9 @@ dist
 /.project
 /RUNNING_PID
 /.settings
+.cache
+.target
+logs
+bin
+conf/overrides.conf
+.ensime
