@@ -3,7 +3,7 @@ import Keys._
 import play.Project
 
 object ApplicationBuild extends Build {
-	val appName         = "boilerplate"
+	val appName         = "$name$"
 	val appVersion      = "1.0-SNAPSHOT"
 
 	val appDependencies = Seq(
